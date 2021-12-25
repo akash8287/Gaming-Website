@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="text-gray-600 body-font" style="position: -webkit-sticky;">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="">
+        <img
+          src="data:image/jpeg;base64,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"
+          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Old Passengers Esports</span>
+      </a>
+      <nav
+        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="#">Home</a>
+        <a class="mr-5 hover:text-gray-900" href="#our team">Players</a>
+        <a class="mr-5 hover:text-gray-900" href="#images">Images</a>
+        <a class="mr-5 hover:text-gray-900" href="#contacts">Contacts</a>
+      </nav>
+      <button
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Gameplay
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col">
+        <div class="h-1 bg-gray-200 rounded overflow-hidden">
+          <div class="w-24 h-full bg-indigo-500"></div>
+        </div>
+        <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
+          <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">Fight Till Death. Fight To
+            Win. Fight Till Victory</h1>
+          <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">The next generation of gaming is here. Gaming is a
+            way of life.
+            Let the games begin.</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full"
+              src="https://miro.medium.com/max/2880/1*x7bohuKsdaMqJh-Amm9F2w.jpeg">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Mobile Legends</h2>
+          <p class="text-base leading-relaxed mt-2">Mobile Legends Bang Bang is a free-to-play multiplayer online battle
+            arena (MOBA) app for Android. In Mobile Legend Bang Gang, you can play with up to 4 other friends in a 5vs5
+            MOBA competition. With 10-second match-making, you won’t have to wait long for your next game.
+            Choose from the massive roster of heroes and take part in hectic 10-minute battles.</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3" href="https://m.mobilelegends.com/">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full"
+              src="https://wallpaperaccess.com/full/6163540.jpg">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">BGMI</h2>
+          <p class="text-base leading-relaxed mt-2">Battlegrounds Mobile India is a player versus player shooter game in
+            which up to one hundred players fight in a battle royale, a type of large-scale last man standing deathmatch
+            where players fight to remain the last alive. Players can choose to enter the match solo, duo, or with a
+            small team of up to four people. The last person or team alive wins the match</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3"
+            href="https://www.battlegroundsmobileindia.com/">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full"
+              src="https://wallpapercave.com/wp/wp1808754.jpg">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Clash Of Clans</h2>
+          <p class="text-base leading-relaxed mt-2">Clash of Clans is an online multiplayer game in which players form
+            communities called clans, train troops, and attack other players to earn resources. ... Gold and elixir can
+            be used to build and upgrade defenses and traps that protect the player's village from other players'
+            attacks and to build and upgrade buildings.</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3"
+            href="https://supercell.com/en/games/clashofclans/">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full"
+              src="https://wallpapercave.com/wp/wp9095266.jpg">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">FiFa</h2>
+          <p class="text-base leading-relaxed mt-2">FIFA Mobile is an association football simulation video game
+            developed by EA Mobile and EA Canada and published by EA Sports for iOS and Android. It was released on 11
+            October 2016, for iOS and Android. Microsoft Windows was also included until 2017. It was announced on
+            August 16, 2016, during Gamescom 2016</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3"
+            href="https://www.ea.com/games/fifa/fifa-mobile">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full"
+              src="https://wallpapercave.com/wp/wp5303470.jpg">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Call Of Duty Mobile</h2>
+          <p class="text-base leading-relaxed mt-2">Call of Duty: Mobile is a free-to-play shooter game developed by
+            TiMi Studio Group and published by Activision for Android and iOS. The game was released on October 1, 2019.
+            It saw one of the largest mobile game launches in history, generating over US$480 million with 270 million
+            downloads within a year.</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3"
+            href="https://www.callofduty.com/content/atvi/callofduty/mobile/web/en/home.html">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full"
+              src="https://images6.alphacoders.com/499/thumb-1920-499121.jpg">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Yu-Gi-Oh</h2>
+          <p class="text-base leading-relaxed mt-2">The Yu-Gi-Oh! Trading Card Game[a] is a Japanese collectible card
+            game developed and published by Konami. It is based on the fictional game of Duel Monsters created by manga
+            artist Kazuki Takahashi, which appears in portions of the manga franchise Yu-Gi-Oh! (under the name of
+            "Magic and Wizards"), and is the central plot device throughout its various anime adaptations and spinoff
+            series.</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3"
+            href="https://www.konami.com/yugioh/duel_links/en/">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <div class="flex w-full mb-20 flex-wrap">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4" id="images">Gallery
+        </h1>
+        <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">Some Of The Best Moments Of Our Best Players
+          Within Games </p>
+      </div>
+      <div class="flex flex-wrap md:-m-2 -m-1">
+        <div class="flex flex-wrap w-1/2">
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://i.ytimg.com/vi/tRTmI8t6vuo/maxresdefault.jpg">
+          </div>
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://mmos.com/wp-content/gallery/clash-of-clans-overview/Clash-of-Clans-total-damage.jpg">
+          </div>
+          <div class="md:p-2 p-1 w-full">
+            <img alt="gallery" class="w-full h-full object-cover object-center block"
+              src="https://pm1.narvii.com/6850/c22fc5a63e51109be2a7890cf6c1a9b68ac1fa0ev2_hq.jpg">
+          </div>
+        </div>
+        <div class="flex flex-wrap w-1/2">
+          <div class="md:p-2 p-1 w-full">
+            <img alt="gallery" class="w-full h-full object-cover object-center block"
+              src="https://gumlet.assettype.com/afkgaming%2Fimport%2Fmedia%2Fimages%2F38898-5f124c3ef579f235317abda5f0f5bcd7.jpeg">
+          </div>
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://cdn57.androidauthority.net/wp-content/uploads/2018/07/Tencent-gaming-buddy-PUBG-mobile-victory-screen-AA.jpg">
+          </div>
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://cdn-www.bluestacks.com/bs-images/CoD_GuidetoPlaying_S1.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="text-2xl font-medium title-font mb-4 text-gray-900" id="our team">OUR TEAM</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Just One For Them Is Enough To Describe EM' "Professional
+          Gamers"
+        </p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+              src="https://scontent.fdel9-1.fna.fbcdn.net/v/t1.6435-9/69667111_1311343442368174_5452891140426563584_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=174925&_nc_ohc=Jog7cUxZkfMAX9eU0XT&tn=Ob7wXJDvMjZN4cpa&_nc_ht=scontent.fdel9-1.fna&oh=00_AT9FKDA5qymSeflXmgWSCGPeyCIRb9zA91iTc9a4s9XKjg&oe=61EDB5FE">
+            <div class="w-full">
+              <h2 class="title-font font-medium text-lg text-gray-900">Akash Mittal</h2>
+              <h3 class="text-gray-500 mb-3">Attacker</h3>
+              <p class="mb-4">He only fights to win.</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                    </path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+              src="https://scontent.fdel9-1.fna.fbcdn.net/v/t1.6435-9/55551884_865010173847673_8070044894061658112_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=vajqJzIZI1cAX-MARpW&_nc_ht=scontent.fdel9-1.fna&oh=00_AT9lQv_krk8UhS8KWDPe0ikQX-XD6CcjpNf5zDgz3ChPxw&oe=61ED63E4">
+            <div class="w-full">
+              <h2 class="title-font font-medium text-lg text-gray-900">Himanshu Kumar</h2>
+              <h3 class="text-gray-500 mb-3">Strategy Maker</h3>
+              <p class="mb-4">He dont use Force. He is skills with brains.
+              </p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                    </path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="">
+            <div class="w-full">
+              <h2 class="title-font font-medium text-lg text-gray-900">Rishabh Saini</h2>
+              <h3 class="text-gray-500 mb-3">Newbie</h3>
+              <p class="mb-4">Most Junior Player of our team. Junior But Skilled</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                    </path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+              src="https://dummyimage.com/203x203">
+            <div class="w-full">
+              <h2 class="title-font font-medium text-lg text-gray-900">Veer Dabas</h2>
+              <h3 class="text-gray-500 mb-3">Underdog</h3>
+              <p class="mb-4">Very Underrated Player. Dont go on his size.</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                    </path>
+                  </svg>
+                </a>
+                <a class="ml-2 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" id="contacts">Contact Us</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Your Feedback Matters To Us.</p>
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+              <input type="text" id="name" name="name"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="email" id="email" name="email"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+              <textarea id="message" name="message"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <button
+              class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send</button>
+          </div>
+          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+            <a class="text-indigo-500">opsesports@email.com</a>
+            <p class="leading-normal my-5">INDIA
+              <br>Barwala, Delhi-110039
+            </p>
+            <span class="inline-flex">
+              <a class="text-gray-500" href="https://www.facebook.com/">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                  viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-4 text-gray-500" href="https://www.twitter.com/">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                  </path>
+                </svg>
+              </a>
+              <a class="ml-4 text-gray-500" href="https://www.instagram.com/">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-4 text-gray-500" href="https://www.whatsapp.com/">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                  </path>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
